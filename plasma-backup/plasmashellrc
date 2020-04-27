@@ -1,0 +1,124 @@
+[Containments][112][General]
+AppletOrder=113;114;115;116;118
+
+[Containments][117][General]
+extraItems=org.kde.plasma.devicenotifier,org.kde.plasma.vault,org.kde.plasma.volume,org.kde.plasma.networkmanagement,org.kde.plasma.bluetooth,org.kde.plasma.battery,org.kde.plasma.keyboardindicator,org.kde.plasma.mediacontroller,org.kde.discovernotifier,org.kde.plasma.clipboard,org.kde.plasma.notifications,org.kde.plasma.printmanager,org.kde.kdeconnect
+knownItems=org.kde.plasma.devicenotifier,org.kde.plasma.vault,org.kde.plasma.volume,org.kde.plasma.networkmanagement,org.kde.plasma.bluetooth,org.kde.plasma.battery,org.kde.plasma.keyboardindicator,org.kde.plasma.mediacontroller,org.kde.discovernotifier,org.kde.plasma.clipboard,org.kde.plasma.notifications,org.kde.plasma.printmanager,org.kde.kdeconnect
+
+[Containments][130][General]
+AppletOrder=131
+
+[Containments][28][General]
+AppletOrder=29
+
+[Containments][30][General]
+AppletOrder=31
+
+[Containments][32][General]
+AppletOrder=33;34;35;36;38;39
+
+[Containments][37][General]
+extraItems=org.kde.plasma.devicenotifier,org.kde.plasma.vault,org.kde.plasma.volume,org.kde.plasma.networkmanagement,org.kde.plasma.bluetooth,org.kde.plasma.battery,org.kde.plasma.keyboardindicator,org.kde.plasma.mediacontroller,org.kde.discovernotifier,org.kde.plasma.clipboard,org.kde.plasma.notifications,org.kde.plasma.printmanager,org.kde.kdeconnect
+knownItems=org.kde.plasma.devicenotifier,org.kde.plasma.vault,org.kde.plasma.volume,org.kde.plasma.networkmanagement,org.kde.plasma.bluetooth,org.kde.plasma.battery,org.kde.plasma.keyboardindicator,org.kde.plasma.mediacontroller,org.kde.discovernotifier,org.kde.plasma.clipboard,org.kde.plasma.notifications,org.kde.plasma.printmanager,org.kde.kdeconnect
+
+[Containments][51][General]
+AppletOrder=52;69;72;55;57
+
+[Containments][56][General]
+extraItems=org.kde.plasma.devicenotifier,org.kde.plasma.vault,org.kde.plasma.volume,org.kde.plasma.networkmanagement,org.kde.plasma.bluetooth,org.kde.plasma.battery,org.kde.plasma.keyboardindicator,org.kde.plasma.mediacontroller,org.kde.discovernotifier,org.kde.plasma.clipboard,org.kde.plasma.notifications,org.kde.plasma.printmanager,org.kde.kdeconnect
+knownItems=org.kde.plasma.devicenotifier,org.kde.plasma.vault,org.kde.plasma.volume,org.kde.plasma.networkmanagement,org.kde.plasma.bluetooth,org.kde.plasma.battery,org.kde.plasma.keyboardindicator,org.kde.plasma.mediacontroller,org.kde.discovernotifier,org.kde.plasma.clipboard,org.kde.plasma.notifications,org.kde.plasma.printmanager,org.kde.kdeconnect
+
+[Containments][73][General]
+AppletOrder=74;75;76;77;79;80
+
+[Containments][78][General]
+extraItems=org.kde.plasma.devicenotifier,org.kde.plasma.vault,org.kde.plasma.volume,org.kde.plasma.networkmanagement,org.kde.plasma.bluetooth,org.kde.plasma.battery,org.kde.plasma.keyboardindicator,org.kde.plasma.mediacontroller,org.kde.discovernotifier,org.kde.plasma.clipboard,org.kde.plasma.notifications,org.kde.plasma.printmanager,org.kde.kdeconnect
+knownItems=org.kde.plasma.devicenotifier,org.kde.plasma.vault,org.kde.plasma.volume,org.kde.plasma.networkmanagement,org.kde.plasma.bluetooth,org.kde.plasma.battery,org.kde.plasma.keyboardindicator,org.kde.plasma.mediacontroller,org.kde.discovernotifier,org.kde.plasma.clipboard,org.kde.plasma.notifications,org.kde.plasma.printmanager,org.kde.kdeconnect
+
+[Containments][92][General]
+AppletOrder=93
+
+[Containments][94][General]
+AppletOrder=95;96;98;100
+
+[Containments][99][General]
+extraItems=org.kde.plasma.devicenotifier,org.kde.plasma.vault,org.kde.plasma.volume,org.kde.plasma.networkmanagement,org.kde.plasma.bluetooth,org.kde.plasma.battery,org.kde.plasma.keyboardindicator,org.kde.plasma.mediacontroller,org.kde.discovernotifier,org.kde.plasma.clipboard,org.kde.plasma.notifications,org.kde.plasma.printmanager,org.kde.kdeconnect
+knownItems=org.kde.plasma.devicenotifier,org.kde.plasma.vault,org.kde.plasma.volume,org.kde.plasma.networkmanagement,org.kde.plasma.bluetooth,org.kde.plasma.battery,org.kde.plasma.keyboardindicator,org.kde.plasma.mediacontroller,org.kde.discovernotifier,org.kde.plasma.clipboard,org.kde.plasma.notifications,org.kde.plasma.printmanager,org.kde.kdeconnect
+
+[DownloadDialog Settings]
+Height 900=494
+Width 1440=700
+
+[KFileDialog Settings]
+Recent Files[$e]=Nagrand_Landscape.jpg,file:$HOME/Pictures/Wallpapers/guillem-h-pongiluppi-guillemhp-darth-vader-vs-ahsoka.jpg,file:$HOME/Pictures/Wallpapers/Nagrand_Landscape.jpg
+Recent URLs[$e]=file:$HOME/Pictures/Wallpapers/
+listViewIconSize=0
+
+[KPropertiesDialog]
+Height 1080=448
+Width 1920=410
+
+[PlasmaRunnerManager]
+LaunchCounts=1 services_kcm_kscreen.desktop,1 services_hardinfo.desktop,1 services_systemsettings.desktop,1 services_nic.desktop,1 services_gitkraken.desktop,2 services_nvidia-settings.desktop
+pluginWhiteList=desktopsessions,services,places,PowerDevil,calculator,unitconverter,shell,bookmarks,recentdocuments,locations,baloosearch
+
+[PlasmaViews][Panel 112][Horizontal1920]
+thickness=36
+
+[PlasmaViews][Panel 130][Horizontal1920]
+thickness=27
+
+[PlasmaViews][Panel 132][Horizontal1360]
+thickness=30
+
+[PlasmaViews][Panel 132][Horizontal1440]
+thickness=24
+
+[PlasmaViews][Panel 132][Vertical1080]
+thickness=36
+
+[PlasmaViews][Panel 2][Horizontal1360]
+thickness=30
+
+[PlasmaViews][Panel 2][Horizontal1920]
+thickness=24
+
+[PlasmaViews][Panel 22][Horizontal1920]
+thickness=27
+
+[PlasmaViews][Panel 28][Horizontal1920]
+thickness=27
+
+[PlasmaViews][Panel 30][Horizontal1920]
+thickness=27
+
+[PlasmaViews][Panel 32][Vertical1080]
+thickness=36
+
+[PlasmaViews][Panel 51][Vertical1080]
+thickness=36
+
+[PlasmaViews][Panel 51][Vertical768]
+thickness=30
+
+[PlasmaViews][Panel 73][Horizontal1920]
+thickness=36
+
+[PlasmaViews][Panel 92][Horizontal1920]
+thickness=27
+
+[PlasmaViews][Panel 94][Horizontal1360]
+thickness=30
+
+[PlasmaViews][Panel 94][Vertical1080]
+thickness=36
+
+[ScreenConnectors]
+0=DVI-I-1
+1=DVI-I-0
+2=DVI-I-3
+3=:0.0
+4=DVI-I-2
+
+[Updates]
+performed=/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/obsolete_kickoffrc.js

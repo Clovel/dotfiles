@@ -1,0 +1,22 @@
+[Desktop Entry]
+DefaultProfile=
+
+[Favorite Profiles]
+Favorites=
+
+[KonsoleWindow]
+ShowWindowTitleOnTitleBar=true
+
+[MainWindow]
+Height 1080=542
+Height 768=422
+Height 900=426
+State=AAAA/wAAAAD9AAAAAAAABUYAAAIAAAAABAAAAAQAAAAIAAAACPwAAAAA
+ToolBarsMovable=Disabled
+Width 1360=728
+Width 1440=736
+Width 1920=1350
+Window-Maximized 768x1360=true
+
+[TabBar]
+TabBarPosition=Top

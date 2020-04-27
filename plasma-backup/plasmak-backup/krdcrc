@@ -1,0 +1,34 @@
+[MainWindow]
+Height 1080=668
+State=AAAA/wAAAAD9AAAAAQAAAAAAAAEQAAACWPwCAAAAAfsAAAAwAHIAZQBtAG8AdABlAEQAZQBzAGsAdABvAHAAcwBEAG8AYwBrAFcAaQBkAGcAZQB0AQAAAEQAAAJYAAAAqAEAAAMAAAK3AAACWAAAAAQAAAAEAAAACAAAAAj8AAAAAQAAAAIAAAABAAAAMABrAHIAZABjAF8AcgBlAG0AbwB0AGUAXwB2AGkAZQB3AF8AdABvAG8AbABiAGEAcgEAAAAA/////wAAAAAAAAAA
+ToolBarsMovable=Disabled
+Width 1920=968
+
+[hostpreferences][rdp://macbook-pro-de-clovis.local:5900]
+colorDepth=2
+console=false
+extraOptions=
+height=600
+keyboardLayout=7
+performance=2
+remoteFX=true
+resolution=6
+shareMedia=/media
+showConfigAgain=true
+sound=0
+soundSystem=0
+walletSupport=true
+width=800
+
+[hostpreferences][vnc://macbook-pro-de-clovis.local:5900]
+height=947
+quality=2
+showConfigAgain=true
+showLocalCursor=false
+ssh_tunnel_port=22
+ssh_tunnel_user_name=
+use_ssh_tunnel=false
+use_ssh_tunnel_loopback=false
+walletSupport=true
+width=1647
+windowedScale=true
