@@ -1,0 +1,10 @@
+brooklyn
+gimp
+inkscape
+mactex
+meld
+qt-creator
+sublime-text
+transmission
+vlc
+xquartz
