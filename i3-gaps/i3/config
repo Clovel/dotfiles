@@ -41,7 +41,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec terminator
+bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+a kill
@@ -195,4 +195,16 @@ bindsym $mod+Alt+Shift+z gaps outer current minus 5
 
 # Wallpaper settings ----------------------------
 exec --no-startup-id feh --bg-fill /home/clovel/Pictures/Wallpapers/paul-chadeisson-testspeed-0200b.jpg
+
+# Mode launcher ---------------------------------
+set $mode_launcher Launch: [f]irefox
+bindsym $mod+o mode "$mode_launcher"
+
+mode "$mode_launcher" {
+    bindsym f exec firefox
+    bindsym v exec code
+
+    bindsym Esc mode "default"
+    bindsym Return mode "default"
+}
 
