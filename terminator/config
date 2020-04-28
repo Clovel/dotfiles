@@ -1,0 +1,13 @@
+[global_config]
+    borderless = True
+    titlebars = False
+[keybindings]
+[profiles]
+    [[default]]
+        copy_on_selection = True
+        background_type = transparent
+        background_image = None
+        background_darkness = 0.90
+        font = monospace 20
+        scrollback_infinite = True
+[plugins]
