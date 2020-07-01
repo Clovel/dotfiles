@@ -3,6 +3,11 @@ alias ll='ls -laF'
 alias la='ls -A'
 alias l='ls -CF'
 
+# cdmkdir ---------------------------------------
+function mkcdir {
+    mkdir -p -- "$1" && cd -P -- "$1"
+}
+
 # Script aliases --------------------------------
 alias srcbash='source ~/.bashrc'
 
