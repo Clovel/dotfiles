@@ -5,15 +5,84 @@
 [color]
     ui = auto
 [alias]
-    st = status -s
+    # shortcuts
+    cl = clone
+    st = status -s # Short status
     continue = rebase --continue
     skip = rebase --skip
     amend = commit --amend
-    la = log --graph --color --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+
     co = checkout
+    cob = checkout -b # Create branch
     cp = cherry-pick
+    ff = merge --ff-only
+    ec = config --global -e # Edit global gitconfig
+    lasttag = describe --tags --abbrev=0
+    filelog = log -u
+    fl = log -u
+
+    # Behavioral aliases
+    pull = pull --rebase --prune
+
+    # Misc.
+    up = !git pull --rebase --prune $@ && git submodule update --init --recursive
+    undo = reset HEAD~1 --mixed
+    wipe = !git add -A && git commit -sm '[WIPE SAVEPOINT]' && git reset HEAD~1 --hard
+    wip = !git add -u && git commit -sm "[WIP]" # Commit the unstaged files to a temporary commit
+
+    # The tree alias gives a graph view of the git log.
+    # It follows this format :
+    # - Graph
+    # - GPG signature indicator
+    # - Commit age
+    # - Commit title
+    # - Commit author
+    # - Branch/tag/remote info
+    tree = log --graph --color --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold red)(%G?)%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+
+    # Find default branch
+    default = !git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'
+
+    # The bclean alias does the following :
+    # - Switches to the default branch (though you can specify a different branch)
+    # - Runs git up to bring the branch up to speed with the origin
+    # - Deletes all branches already merged into the specified branch using another alias, git bclean
+    # In other words, it deletes every branch that’s been merged into the specified branch except the branch.
+    bclean = "!f() { DEFAULT=$(git default); git branch --merged ${1-$DEFAULT} | grep -v " ${1-$DEFAULT}$" | xargs git branch -d; }; f"
+    bdone = "!f() { DEFAULT=$(git default); git checkout ${1-$DEFAULT} && git up && git bclean ${1-$DEFAULT}; }; f"
 [core]
-    editor = vim
+    editor = vim # Or nano, emacs, etc.
+    autocrlf = input
+
+    # Don't consider trailing space change as a cause for merge conflicts
+    whitespace = -trailing-space
+[pull]
+    # This is GREAT… when you know what you're doing and are careful
+    # not to pull --no-rebase over a local line containing a true merge.
+    # rebase = true
+    # This option, which does away with the one gotcha of
+    # auto-rebasing on pulls, is only available from 1.8.5 onwards.
+    # rebase = preserve
+    # WARNING! This option, which is the latest variation, is only
+    # available from 2.18 onwards.
+    rebase = merges
+[fetch]
+    # Auto-fetch submodule changes (sadly, won't auto-update)
+    recurseSubmodules = on-demand
+[status]
+    # Display submodule rev change summaries in status
+    submoduleSummary = true
+    # Recursively traverse untracked directories to display all contents
+    showUntrackedFiles = all
+[diff]
+    # Use VSCode as default diff tool when running `git diff-tool`
+    tool = vscode
+[difftool "vscode"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+[color "branch"]
+    # Blue on black is hard to read in git branch -vv: use cyan instead
+    upstream = cyan
 [credential]
-    helper = osxkeychain #macOS
-    #helper = cache #Linux, temporary. Can add `--timeout 30000` to set timeout
+    # helper = osxkeychain # macOS
+    helper = cache # Linux, temporary. Can add `--timeout 30000` to set timeout
+    # helper = store # Any OS. [WARNING] Stored in plain text in the hard drive
