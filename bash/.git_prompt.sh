@@ -1,25 +1,16 @@
 # git functions for the bash prompt -------------
-function getCurrentGitBranch() {
-    # This is faster than `git rev-parse --abbrev-ref HEAD 2> /dev/null`
-    # Timed our solution more that twice as fast than the previous one.
 
-    git symbolic-ref --short HEAD 2> /dev/null
-}
+# This is faster than `git rev-parse --abbrev-ref HEAD 2> /dev/null`
+# Timed our solution more that twice as fast than the previous one.
+alias getCurrentGitBranch='git symbolic-ref --short HEAD 2> /dev/null'
 
-function getCurrentGitRef() {
-    # This is slower that getCurrentGitBranch
-    # Use it only if the first solution returned nothing
-    git rev-parse --abbrev-ref --symbolic-full-name HEAD
-}
+# This is slower that getCurrentGitBranch
+# Use it only if the first solution returned nothing
+alias getCurrentGitRef='git rev-parse --abbrev-ref --symbolic-full-name HEAD 2> /dev/null'
 
-function getCurrentGitTag() {
-    # TODO : This is a long operation. We should optimize it
-    git describe --tags --exact-match HEAD 2> /dev/null
-}
+alias getCurrentGitTag='git describe --tags --exact-match HEAD 2> /dev/null'
 
-function getCurrentCommitHash() {
-    git rev-parse HEAD 2> /dev/null
-}
+alias getCurrentCommitHash='git rev-parse HEAD 2> /dev/null'
 
 function isHeadDetached() {
     git symbolic-ref -q HEAD > /dev/null
@@ -30,32 +21,23 @@ function isHeadDetached() {
     fi
 }
 
-function getGitRepoRoot() {
-    git rev-parse --show-toplevel 2> /dev/null
-}
+alias getGitRepoRoot='git rev-parse --show-toplevel 2> /dev/null'
 
 function isGitRepo() {
-    if [[ "" == "$(getGitRepoRoot)" ]]; then
-        echo false
-    else
+    getGitRepoRoot > /dev/null
+    if [[ "0" == "$?" ]]; then
         echo true
+    else
+        echo false
     fi
 }
 
-function getNumberOfChangedFiles() {
-    # This is slow. We must find a better way to do this
-    echo "$(git status -s | wc -l)"
-}
+# This is slow. We must find a better way to do this
+alias getNumberOfChangedFiles='git status -s 2> /dev/null | wc -l'
 
-function getUpstreamCommitHash() {
-    git rev-parse '@{upstream}' 2> /dev/null
-}
+alias getUpstreamCommitHash='git rev-parse '@{upstream}' 2> /dev/null'
 
-function getBranchInfo() {
-    # arg1 : branchName
-    local branchName=$1
-    git branch -v 2> /dev/null | grep "* $branchName"
-}
+alias getBranchInfo='git branch -v 2> /dev/null | grep'
 
 function getSpecialState() {
     local gitRootDir="$(getGitRepoRoot)/.git"
@@ -196,6 +178,7 @@ function uncommittedChangesIndicator() {
 function buildGitPrompt() {
     # Check if this is a git repository
     local isThisAGitRepository=$(isGitRepo)
+    echo "[DEBUG] <buildGitPrompt> git root : $(getGitRepoRoot)"
     echo "[DEBUG] <buildGitPrompt> isThisAGitRepository ? $isThisAGitRepository"
     echo "[DEBUG] <buildGitPrompt> PWD : $PWD"
     if [[ "false" == "$(isGitRepo)" ]]; then
@@ -212,7 +195,7 @@ function buildGitPrompt() {
 export GIT_DISCOVERY_ACROSS_FILESYSTEM=1
 
 # Build the bash prompt -------------------------
-PS1="$(buildGitPrompt)"
+PS1=$(buildGitPrompt)
 # PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h\[\033[m\]:\[\033[33;1m\]\W\[\033[36;1m\]\[\033[m\]\[\033[1m\]\\[\033[m\] \$ "
 export PS1
 export CLICOLOR=1
