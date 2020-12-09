@@ -3,22 +3,22 @@ function getCurrentGitBranch() {
     # This is faster than `git rev-parse --abbrev-ref HEAD 2> /dev/null`
     # Timed our solution more that twice as fast than the previous one.
 
-    echo "$(git symbolic-ref --short HEAD 2> /dev/null)"
+    git symbolic-ref --short HEAD 2> /dev/null
 }
 
 function getCurrentGitRef() {
     # This is slower that getCurrentGitBranch
     # Use it only if the first solution returned nothing
-    echo "$(git rev-parse --abbrev-ref --symbolic-full-name HEAD)"
+    git rev-parse --abbrev-ref --symbolic-full-name HEAD
 }
 
 function getCurrentGitTag() {
     # TODO : This is a long operation. We should optimize it
-    echo "$(git describe --tags --exact-match HEAD 2> /dev/null)"
+    git describe --tags --exact-match HEAD 2> /dev/null
 }
 
 function getCurrentCommitHash() {
-    echo "$(git rev-parse HEAD 2> /dev/null)"
+    git rev-parse HEAD 2> /dev/null
 }
 
 function isHeadDetached() {
@@ -31,7 +31,7 @@ function isHeadDetached() {
 }
 
 function getGitRepoRoot() {
-    echo "$(git rev-parse --show-toplevel 2> /dev/null)"
+    git rev-parse --show-toplevel 2> /dev/null
 }
 
 function isGitRepo() {
@@ -48,13 +48,13 @@ function getNumberOfChangedFiles() {
 }
 
 function getUpstreamCommitHash() {
-    echo "$(git rev-parse '@{upstream}' 2> /dev/null)"
+    git rev-parse '@{upstream}' 2> /dev/null
 }
 
 function getBranchInfo() {
     # arg1 : branchName
     local branchName=$1
-    echo "$(git branch -v 2> /dev/null | grep "* $branchName")"
+    git branch -v 2> /dev/null | grep "* $branchName"
 }
 
 function getSpecialState() {
